@@ -55,10 +55,18 @@ public class UserService {
 		
 		return userRepository.save(user);
 		
-		
-		
-		
 	}
+	
+	public void deleteUserById(Integer userId) {
+		
+		Optional<User> currentUser = userRepository.findById(userId);
+		
+		System.out.println("Deleting"+ currentUser);
+		
+        userRepository.deleteById(userId);
+    }
+
+	
 	
 	
 }
